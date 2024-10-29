@@ -1,0 +1,36 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: restapi
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:9000/eureka}
+    fetch-registry: true
+    registry-fetch-interval-seconds: 5
+    eureka-server-connect-timeout-seconds: 10
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: user
+
+info:
+  app:
+    name: @project.name@
+    version: @project.version@
