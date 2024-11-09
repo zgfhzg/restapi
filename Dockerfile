@@ -14,7 +14,7 @@ LABEL authors="HS"
 ARG ARTIFACT_ID=restapi
 ARG ARTIFACT_VERSION=0.0.1
 
-EXPOSE 8082
+EXPOSE 8083
 
 WORKDIR /myserver
 COPY --from=builder /restapi/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
