@@ -23,9 +23,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   datasource:
-    url: jdbc:postgresql://{DATABASE_URL}:{DATABASE_PORT}/{DATABASE_NAME}?charSet=UTF8&currentSchema=public
-    username: {DATABASE_USERNAME}
-    password: {DATABASE_PASSWORD}
+    url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:postgres}?charSet=UTF8&currentSchema=public
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
     driverClassName: org.postgresql.Driver
     hikari:
       maximum-pool-size: 30
