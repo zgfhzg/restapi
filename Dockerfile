@@ -16,7 +16,7 @@ ARG ARTIFACT_VERSION=0.0.1
 
 EXPOSE 8083
 
-WORKDIR /myserver
+WORKDIR /restapi
 COPY --from=builder /restapi/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
 
-ENTRYPOINT ["java", "-jar", "/myserver/app.jar"]
+ENTRYPOINT ["java", "-jar", "/restapi/app.jar"]
