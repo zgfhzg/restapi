@@ -20,6 +20,7 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   datasource:
     url: jdbc:postgresql://{DATABASE_URL}:{DATABASE_PORT}/{DATABASE_NAME}?charSet=UTF8&currentSchema=public
@@ -28,6 +29,10 @@ spring:
     driverClassName: org.postgresql.Driver
     hikari:
       maximum-pool-size: 30
+
+  data:
+    rest:
+      base-path: /api
 
 management:
   info:
@@ -52,7 +57,7 @@ eureka:
     healthcheck:
       enabled: true
   instance:
-    instance-id: user
+    instance-id: restapi
 
 info:
   app:

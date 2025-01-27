@@ -7,7 +7,7 @@ RUN gradle build -x test
 ## java runtime
 FROM ghcr.io/graalvm/jdk-community:21
 
-LABEL application="user"
+LABEL application="restapi"
 LABEL version="1.0"
 LABEL authors="HS"
 
