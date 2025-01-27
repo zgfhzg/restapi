@@ -61,5 +61,5 @@ eureka:
 
 info:
   app:
-    name: @project.name@
-    version: @project.version@
+    name: restapi
+    version: 0.0.1
