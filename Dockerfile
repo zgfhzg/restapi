@@ -24,4 +24,4 @@ ENV DATABASE_USERNAME=postgres
 ENV DATABASE_PASSWORD=password
 COPY --from=builder /restapi/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
 
-ENTRYPOINT ["java", "-DDATABASE_URL=DATABASE_URL", "-jar", "/restapi/app.jar"]
+ENTRYPOINT ["java", "-DDATABASE_URL=${DATABASE_URL}", "-jar", "/restapi/app.jar"]
