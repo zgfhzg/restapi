@@ -17,11 +17,11 @@ ARG ARTIFACT_VERSION=0.0.1
 EXPOSE 8083
 
 WORKDIR /restapi
-ENV DB_URL=postgres
+ENV DB_URL=localhost
 ENV DATABASE_PORT=5432
 ENV DATABASE_NAME=postgres
 ENV DATABASE_USERNAME=postgres
 ENV DATABASE_PASSWORD=password
 COPY --from=builder /restapi/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
 
-ENTRYPOINT ["java", "-DDATABASE_URL=postgres", "-jar", "/restapi/app.jar"]
+ENTRYPOINT ["java", "-DDATABASE_URL=${DB_URL}", "-jar", "/restapi/app.jar"]
