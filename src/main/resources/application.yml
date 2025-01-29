@@ -58,6 +58,7 @@ eureka:
       enabled: true
   instance:
     instance-id: restapi
+    hostname: ${SERVER_DNS:localhost}
 
 info:
   app:
