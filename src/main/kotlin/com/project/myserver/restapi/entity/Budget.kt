@@ -19,7 +19,7 @@ class Budget(
     var payDate: ZonedDateTime? = ZonedDateTime.now(),
 
     @Column(name = "division")
-    var device: Boolean,
+    var division: Boolean,
 
     @Column(name = "detail")
     var detail: String,
